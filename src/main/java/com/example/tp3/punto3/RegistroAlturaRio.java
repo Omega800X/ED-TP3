@@ -3,11 +3,11 @@ package com.example.tp3.punto3;
 public class RegistroAlturaRio {
 	private String puerto;
 	private String rio;
-	private double ultimoReg;
+	private String ultimoReg;
 	private String fechaHora;
 	private Estado estado;
 
-	public RegistroAlturaRio(String puerto, String rio, double ultimoReg, String fechaHora, Estado estado) {
+	public RegistroAlturaRio(String puerto, String rio, String ultimoReg, String fechaHora, Estado estado) {
 		this.puerto = puerto;
 		this.rio = rio;
 		this.ultimoReg = ultimoReg;
@@ -31,11 +31,11 @@ public class RegistroAlturaRio {
 		this.rio = rio;
 	}
 
-	public double getUltimoReg() {
+	public String getUltimoReg() {
 		return ultimoReg;
 	}
 
-	public void setUltimoReg(double ultimoReg) {
+	public void setUltimoReg(String ultimoReg) {
 		this.ultimoReg = ultimoReg;
 	}
 
@@ -75,7 +75,7 @@ public class RegistroAlturaRio {
 		builder.append(fechaHora);
 		builder.append("\n");
 		builder.append("estado: ");
-		builder.append(estado);
+		builder.append(estado.getDescripcion());
 		builder.append("\n");
 		builder.append("--------------------");
 		return builder.toString();

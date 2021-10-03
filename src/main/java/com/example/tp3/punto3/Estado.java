@@ -1,5 +1,14 @@
 package com.example.tp3.punto3;
 
 public enum Estado {
-	CRECE, BAJA;
+	CRECE("CRECE"), BAJA("BAJA"), ESTAC("ESTAC."), SINESTADO("S/E");
+	private final String descripcion;
+
+	private Estado(String descripción) {
+		this.descripcion = descripción;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
 }
