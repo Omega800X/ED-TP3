@@ -65,7 +65,7 @@ public class RegistroAlturaRio {
 		builder.append("puerto: ");
 		builder.append(puerto);
 		builder.append("\n");
-		builder.append("rio: ");
+		builder.append("río: ");
 		builder.append(rio);
 		builder.append("\n");
 		builder.append("último registro: ");
