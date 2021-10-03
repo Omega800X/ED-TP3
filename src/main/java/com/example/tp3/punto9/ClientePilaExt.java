@@ -1,6 +1,6 @@
-package punto9;
+package com.example.tp3.punto9;
 
-import punto8.PilaExtImp;
+import com.example.tp3.punto8.PilaExtImp;
 
 public class ClientePilaExt {
     public static void main(String[] args) {

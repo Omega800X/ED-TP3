@@ -1,5 +1,5 @@
 
-package punto8;
+package com.example.tp3.punto8;
 import ar.edu.uner.fcad.ed.edlineales.colas.ColaPorEnlaces;
 import ar.edu.uner.fcad.ed.edlineales.pilas.PilaPorEnlaces;
 
