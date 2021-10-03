@@ -4,7 +4,7 @@ import punto8.PilaExtImp;
 
 public class ClientePilaExt {
     public static void main(String[] args) {
-        System.out.println("test AgregarTodos");
+        //System.out.println("test AgregarTodos");
         PilaExtImp<Integer> pila = new PilaExtImp();
         PilaExtImp<Integer> pila2 = new PilaExtImp();
         pila.push(1);
@@ -17,19 +17,18 @@ public class ClientePilaExt {
         pila2.push(7);
         pila2.push(8);
 
-        System.out.println("Pila1: " + pila.toString());
-        System.out.println(pila.toString());
-        System.out.println("");
-        System.out.println("agregar todos los elementos de pila 1 en pila2");
-        pila.agregarTodos(pila2);
+        //System.out.println("Pila1: " + pila.toString());
+        //System.out.println("\n");
+        //System.out.println("despues de agregar todos los elementos de pila 1 en pila2");
+        //pila.agregarTodos(pila2);
         System.out.println("");
         System.out.println(pila.toString());
         
-        System.out.println("testInvertirOrden");
-        //se invierte el orden de la pila 2, deberia mostrar 5,6,7,8
-        pila2.invertirOrden();
+//        System.out.println("testInvertirOrden");
+//        //se invierte el orden de la pila 2, deberia mostrar 5,6,7,8
+        pila.invertirOrden();
         System.out.println("pila invertida");
-        System.out.println(pila2.toString());
+        System.out.println(pila.toString());
     }
     
     
