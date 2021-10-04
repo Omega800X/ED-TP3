@@ -1,5 +1,9 @@
 package com.example.tp3.punto10;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import ar.edu.uner.fcad.ed.edlineales.NodoLista;
 
 public class ColaAleatoria<T> implements ColaAleatoriaInterfaz<T> {
@@ -36,18 +40,26 @@ public class ColaAleatoria<T> implements ColaAleatoriaInterfaz<T> {
 		return nodoActual.getElemento();
 	}
 
-	@Override
-	public void removeRandom() {
-		int numRandom = (int) (Math.random() * this.cantElem);
-		NodoLista<T> nodoActual = this.front;
-		for (int i = 0; i < numRandom - 1; i++) {
+	private List<T> randomQueueToList(ColaAleatoria param) {
+		List<T> res = new ArrayList<T>();
+		NodoLista<T> nodoActual = param.front;
+		while (nodoActual != null) {
+			res.add(nodoActual.getElemento());
 			nodoActual = nodoActual.getSiguiente();
 		}
-		if (nodoActual.getSiguiente().getSiguiente() != null) {
-			nodoActual.setSiguiente(nodoActual.getSiguiente().getSiguiente());
-		} else {
-			nodoActual.setSiguiente(null);
+		return res;
+	}
+
+	@Override
+	public void removeRandom() {
+		List<T> aux = randomQueueToList(this);
+		int randomIndex = (int) (Math.random() * (aux.size()));
+		aux.remove(randomIndex);
+		makeEmpty();
+		for(var elem : aux) {
+			this.enqueue(elem);
 		}
+		cantElem--;
 	}
 
 	@Override

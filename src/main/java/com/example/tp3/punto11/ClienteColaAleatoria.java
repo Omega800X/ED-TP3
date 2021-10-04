@@ -13,7 +13,6 @@ public class ClienteColaAleatoria {
 		colaAle.enqueue(50);
 		colaAle.enqueue(60);
 		
-		
 		System.out.println("cola");
 		System.out.println(colaAle.toString());
 		System.out.println("");
