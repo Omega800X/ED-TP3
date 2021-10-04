@@ -49,7 +49,6 @@ public class ListaDoble<T> implements ListaDobleInterfaz<T> {
 		if (size() == 0) {
 			this.header.siguiente = nodoPorAgregar;
 		} else {
-
 			NodoListaDoble<T> nodoActual = header.siguiente;
 			while (nodoActual.siguiente != null) {
 				nodoActual = nodoActual.siguiente;
@@ -66,7 +65,7 @@ public class ListaDoble<T> implements ListaDobleInterfaz<T> {
 		}
 		NodoListaDoble<T> nodoElem = null;
 		NodoListaDoble<T> nodoActual = header.siguiente;
-		while (nodoActual.siguiente != null) {
+		while (nodoActual != null) {
 			if (nodoActual.elemento == element) {
 				nodoElem = nodoActual;
 				break;
@@ -76,7 +75,10 @@ public class ListaDoble<T> implements ListaDobleInterfaz<T> {
 		if (nodoElem == null) {
 			throw new IllegalArgumentException("El elemento especificado no forma parte de la estructura");
 		}
-		if (nodoElem.siguiente != null) {
+		if (nodoElem.anterior == null) {
+			this.header.siguiente = nodoElem.siguiente;
+			nodoElem.siguiente.anterior = null;
+		} else if (nodoElem.siguiente != null) {
 			nodoElem.anterior.siguiente = nodoElem.siguiente;
 			nodoElem.siguiente.anterior = nodoElem.anterior;
 		} else {
