@@ -26,8 +26,8 @@ public class ExtractorRegistrosPrefectura {
 				".*\\\"(Puerto|Río|Ultimo\\sRegistro|Fecha\\sHora|Estado):\\\"(\\sclass=\\\"warning\\\")?>(<b>)?([a-zA-Z\\s\\(\\)\\/\\.]*|\\d+\\.+\\d{2}|\\d{2}\\/[A-Z]{3}\\/\\d{2}\\s-{1}\\s\\d{4})(<b>)?<.*");
 		Matcher m;
 		String puerto, rio, estado, ultimoRegistro, fechaHora;
-                FileInputStream fis = new FileInputStream(archivo);
-                InputStreamReader isr = new InputStreamReader(fis, StandardCharsets.UTF_8);
+		FileInputStream fis = new FileInputStream(archivo);
+		InputStreamReader isr = new InputStreamReader(fis, StandardCharsets.UTF_8);
 		BufferedReader br = new BufferedReader(isr);
 		puerto = null;
 		rio = null;
@@ -55,14 +55,14 @@ public class ExtractorRegistrosPrefectura {
 					break;
 				case "Estado":
 					switch (m.group(4)) {
-						case "ESTAC.":
-							estado = m.group(4).substring(0, 5);
-							break;
-						case "S/E.":
-							estado = "SINESTADO";
-							break;
-						default:
-							estado = m.group(4);
+					case "ESTAC.":
+						estado = m.group(4).substring(0, 5);
+						break;
+					case "S/E.":
+						estado = "SINESTADO";
+						break;
+					default:
+						estado = m.group(4);
 					}
 					break;
 				}
