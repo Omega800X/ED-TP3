@@ -35,7 +35,6 @@ public class ClienteListaDoble {
 		System.out.println("ultimo(): " + iterador.ultimo());
 		System.out.println("existeSiguiente(): " + iterador.existeSiguiente());
 		System.out.println("primero(): " + iterador.primero());
-
 	}
 
 }
