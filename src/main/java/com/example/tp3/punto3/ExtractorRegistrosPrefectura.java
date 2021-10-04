@@ -2,8 +2,11 @@ package com.example.tp3.punto3;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -23,7 +26,9 @@ public class ExtractorRegistrosPrefectura {
 				".*\\\"(Puerto|Río|Ultimo\\sRegistro|Fecha\\sHora|Estado):\\\"(\\sclass=\\\"warning\\\")?>(<b>)?([a-zA-Z\\s\\(\\)\\/\\.]*|\\d+\\.+\\d{2}|\\d{2}\\/[A-Z]{3}\\/\\d{2}\\s-{1}\\s\\d{4})(<b>)?<.*");
 		Matcher m;
 		String puerto, rio, estado, ultimoRegistro, fechaHora;
-		BufferedReader br = new BufferedReader(new FileReader(archivo));
+                FileInputStream fis = new FileInputStream(archivo);
+                InputStreamReader isr = new InputStreamReader(fis, StandardCharsets.UTF_8);
+		BufferedReader br = new BufferedReader(isr);
 		puerto = null;
 		rio = null;
 		estado = null;
